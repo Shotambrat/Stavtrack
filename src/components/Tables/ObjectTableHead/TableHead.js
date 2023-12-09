@@ -6,7 +6,6 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Checkbox from '@mui/material/Checkbox';
-import toast, { Toaster } from "react-hot-toast";
 
 // id, name, uniqueId, status, lastUpdate
 const headCells = [
