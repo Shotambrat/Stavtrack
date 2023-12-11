@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { NavLink } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -69,9 +70,11 @@ export default function AppBarComponent() {
                 }}
                 >
                 {pages.map((page) => (
-                    <MenuItem key={page.title} onClick={handleCloseNavMenu}>
-                    <Typography href={`${page.url}`} textAlign="center">{page.title}</Typography>
-                    </MenuItem>
+                    <NavLink to={`${page.url}`} style={{ textDecoration: 'none' }}>
+                        <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+                            <Typography textAlign="center">{page.title}</Typography>
+                        </MenuItem>
+                    </NavLink>
                 ))}
                 </Menu>
             </Box>
@@ -79,15 +82,17 @@ export default function AppBarComponent() {
                 
             >
                 {pages.map((page) => (
-                <Button
-                    href={`${page.url}`}
-                    variant="contained"
-                    key={`${page.title}`}
-                    onClick={handleCloseNavMenu}
-                    sx={{ color: '#fff', my: 2, display: 'block', margin: '0 10px' }}
-                >
-                    {page.title}
-                </Button>
+                    <NavLink to={`${page.url}`} style={{ textDecoration: 'none' }}>
+                        <Button
+                            href={`${page.url}`}
+                            variant="contained"
+                            key={`${page.title}`}
+                            onClick={handleCloseNavMenu}
+                            sx={{ color: '#fff', my: 2, display: 'block', margin: '0 10px' }}
+                        >
+                            {page.title}
+                        </Button>
+                    </NavLink>
                 ))}
             </Box>
 
